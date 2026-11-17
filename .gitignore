@@ -42,3 +42,6 @@ yarn-error.*
 
 # geheimen
 .env
+
+# lokale exports
+*.zip
