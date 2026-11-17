@@ -1,25 +1,51 @@
 {
   "expo": {
-    "name": "ritprijs",
+    "name": "RitPrijs",
     "slug": "ritprijs",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "nl.ritprijs.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "RitPrijs gebruikt je locatie als vertrekpunt om de route en de kosten van je rit te berekenen."
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0A0F1A",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "nl.ritprijs.app",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-sqlite",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "RitPrijs gebruikt je locatie als vertrekpunt om de route en de kosten van je rit te berekenen.",
+          "isIosBackgroundLocationEnabled": false,
+          "isAndroidBackgroundLocationEnabled": false
+        }
+      ]
+    ],
+    "scheme": "ritprijs",
+    "backgroundColor": "#0A0F1A",
+    "experiments": {
+      "typedRoutes": false
     }
   }
 }
